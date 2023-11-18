@@ -1,8 +1,8 @@
 import { T } from "@/text";
 import { TURNS } from "@/types";
 import { useState } from "react";
-import { Square } from "@/components/board/Square";
 import { Button } from "react-bootstrap";
+import { Square } from "@/components/board/Square";
 
 export default function HomePage() {
   const [board, setBoard] = useState(Array(9).fill(null));
