@@ -5,8 +5,6 @@ import DatabaseProvider from "@/backend/providers/database";
 import { Match } from "@/backend/models/interfaces/match";
 
 const generateNewMovement = (turn: TURNS, board: TURNS[]) => {
-  // algotithm to generate new movement for tic tac toe
-
   const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
   const newBoard = [...board];
 
