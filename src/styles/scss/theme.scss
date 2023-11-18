@@ -1,0 +1,82 @@
+$theme-colors: (
+  'primary': #0666eb,
+  'danger': #f34141,
+  'success': #53b483,
+  'background': red,  
+);
+
+$custom-colors: (
+  'white': #ffffff,
+  'black': #111111,
+  'blue': #0666eb,
+
+  'light-blue': #3ebdee,
+  'light-green': #28cfb1,
+
+  'blue50': #e6effd,
+  'blue100': #b4d1f9,
+  'blue200': #82b2f5,
+  'blue300': #5194f1,
+  'blue400': #3885ef,
+  'blue500': #1f76ed,
+  'blue600': #0666eb,
+  'blue700': #0b5bcb,
+  'blue800': #0d4ba3,
+  'blue900': #083a80,
+  'blue1000': #072958,
+
+  'gray50': #fafafa,
+  'gray100': #f6f7f9,
+  'gray200': #e5e7ea,
+  'gray300': #ced2d6,
+  'gray400': #9ea5ad,
+  'gray500': #676e76,
+  'gray600': #596066,
+  'gray700': #454c52,
+  'gray800': #454c52,
+  'gray900': #24292e,
+  'gray1000': #24292e,
+
+  'error50': #fffbfa,
+  'error100': #fef2f2,
+  'error200': #fde9e9,
+  'error300': #fac7c7,
+  'error400': #f7a1a1,
+  'error500': #f37373,
+  'error600': #f34141,
+  'error700': #cd3636,
+  'error800': #a32e2e,
+  'error900': #7c2323,
+  'error1000': #601b1b,
+
+  'orange': #f8a75c,
+  'purple': #c21feb,
+
+  'warning50': #fffcf5,
+  'warning100': #fefaf5,
+  'warning200': #fbf2cb,
+  'warning300': #fde57e,
+  'warning400': #ffd16a,
+  'warning500': #fbbc55,
+  'warning600': #e9a23b,
+  'warning700': #c8811a,
+  'warning800': #a35c00,
+  'warning900': #8b4400,
+  'warning1000': #78310b,
+
+  'success50': #f6fef9,
+  'success100': #effdf6,
+  'success200': #d9f9e6,
+  'success300': #b8f1d2,
+  'success400': #8ee4ba,
+  'success500': #6ad09d,
+  'success600': #53b483,
+  'success700': #2f9461,
+  'success800': #2f7657,
+  'success900': #255e46,
+  'success1000': #1e4d3a
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import 'node_modules/bootstrap/scss/bootstrap';

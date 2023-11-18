@@ -1,0 +1,28 @@
+@import 'theme';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.heading-s {
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.text-l {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.text-m {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text-s {
+    font-size: 14px;
+    line-height: 20px;
+}
