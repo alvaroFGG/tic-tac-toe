@@ -2,21 +2,37 @@ import { T } from "@/text";
 import { TURNS } from "@/types";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { createOrUpdateMatch } from "@/services";
 import { Square } from "@/components/board/Square";
 
 export default function HomePage() {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(Array(9).fill(TURNS.EMPTY));
   const [turn, setTurn] = useState<TURNS>(TURNS.X);
+  const [matchId, setMatchId] = useState<string>("");
 
-  const updateBoard = (index: number) => {
-    if (board[index] !== null) {
+  const setMovementByAI = async (newBoard: TURNS[]) => {
+    const response = await createOrUpdateMatch(newBoard, turn, matchId);
+
+    if (!response || !response.board) {
+      return;
+    }
+
+    setBoard(response.board);
+    setMatchId(response._id);
+    setTurn(TURNS.X);
+  };
+
+  const updateBoard = async (index: number) => {
+    if (board[index] !== TURNS.EMPTY) {
       return;
     }
 
     const newBoard = [...board];
     newBoard[index] = turn;
     setBoard(newBoard);
-    setTurn(turn === TURNS.X ? TURNS.O : TURNS.X);
+    setTurn(TURNS.O);
+
+    await setMovementByAI(newBoard);
   };
 
   return (

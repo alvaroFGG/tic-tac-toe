@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 export const Header = () => {
   const router = useRouter();
-  console.log(router.asPath);
 
   return (
     <header className="w-100 d-flex flex-column align-items-center justify-content-center p-3">
