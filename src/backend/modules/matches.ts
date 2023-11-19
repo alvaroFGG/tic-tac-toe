@@ -70,8 +70,6 @@ const checkWinner = (board: TURNS[]) => {
     }
   });
 
-  console.log(hasAWinner);
-
   return hasAWinner;
 };
 

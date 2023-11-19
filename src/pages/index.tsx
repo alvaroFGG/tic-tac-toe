@@ -21,12 +21,21 @@ export default function HomePage() {
     }
 
     setBoard(response.board);
-    console.log(response);
+
     if (response.winner) {
       setWinner(response.winner as TURNS);
       setShowModal(true);
       return;
     }
+
+    if (
+      !response.winner &&
+      response.board.every((value) => value !== TURNS.EMPTY)
+    ) {
+      setWinner(undefined);
+      setShowModal(true);
+      return;
+
     setMatchId(response._id);
     setTurn(TURNS.X);
   };
@@ -54,16 +63,15 @@ export default function HomePage() {
 
   return (
     <div className="mt-5 d-flex flex-column gap-2 align-items-center justify-content-center">
-      {winner && (
-        <WinnerModal
-          isModalOpen={showModal}
-          setIsModalOpen={setShowModal}
-          winner={winner}
-          setBoard={setBoard}
-          setMatchId={setMatchId}
-          setTurn={setTurn}
-        />
-      )}
+      <WinnerModal
+        isModalOpen={showModal}
+        setIsModalOpen={setShowModal}
+        winner={winner}
+        setBoard={setBoard}
+        setMatchId={setMatchId}
+        setTurn={setTurn}
+      />
+
       <span className="text-l fw-bold">
         {T.TURN} {turn}
       </span>
