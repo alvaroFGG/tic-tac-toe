@@ -1,4 +1,5 @@
 const language = {
+  CLASIFICATION: "Clasificación",
   DRAW: "Empate",
   HOME: "Home",
   BOARD: "Board",

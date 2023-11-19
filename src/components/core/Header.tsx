@@ -20,12 +20,12 @@ export const Header = () => {
           {T.HOME}
         </Link>
         <Link
-          href="/board"
+          href="/clasification"
           className={`text-decoration-none px-2 py-1 ${
-            router.asPath === "/board" && "bg-white rounded-2"
+            router.asPath === "/clasification" && "bg-white rounded-2"
           }`}
         >
-          {T.BOARD}
+          {T.CLASIFICATION}
         </Link>
       </div>
     </header>

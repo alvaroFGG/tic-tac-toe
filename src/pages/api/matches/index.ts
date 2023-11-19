@@ -50,7 +50,6 @@ const createEndpoints = async (req: NextApiRequest, res: NextApiResponse) => {
       break;
     case "DELETE":
       await deleteMatch(req, res);
-      break;
   }
 };
 
