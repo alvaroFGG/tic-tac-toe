@@ -63,7 +63,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="mt-5 d-flex flex-column gap-2 align-items-center justify-content-center">
+    <div className="mt-5 d-flex flex-column gap-2 align-items-center justify-content-center px-2">
       <WinnerModal
         isModalOpen={showModal}
         setIsModalOpen={setShowModal}
