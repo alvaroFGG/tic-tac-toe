@@ -2,6 +2,7 @@ import { T } from "@/text";
 import { getclassification } from "@/services";
 import { classification, TURNS } from "@/types";
 import React, { useEffect, useState } from "react";
+import { ClassificationRow } from "@/components/classification/ClassificationRow";
 
 const BoardPage = () => {
   const [classification, setclassification] = useState<classification>();
@@ -18,6 +19,7 @@ const BoardPage = () => {
     fetchclassification();
   }, []);
 
+  if (!classification) return <></>;
   return (
     <div className="mx-auto p-2" style={{ maxWidth: "600px" }}>
       <div>
@@ -32,25 +34,20 @@ const BoardPage = () => {
         className="mx-auto w-100 d-flex flex-column rounded-4 overflow-hidden"
         style={{ gap: "2px" }}
       >
-        <div className="d-flex justify-content-between bg-white p-3">
-          <span>{TURNS.X}</span>
+        <ClassificationRow
+          player={TURNS.X}
+          victories={classification.XMatches.length}
+        />
 
-          <span className="text-l">{classification?.XMatches.length}</span>
-        </div>
+        <ClassificationRow
+          player={`${TURNS.O} (IA)`}
+          victories={classification.OMatches.length}
+        />
 
-        <div className="d-flex justify-content-between bg-white p-3">
-          <span>
-            {TURNS.O} <span className="text-xs">(IA)</span>
-          </span>
-
-          <span className="text-l">{classification?.OMatches.length}</span>
-        </div>
-
-        <div className="d-flex justify-content-between bg-white p-3">
-          <span>{T.DRAWS}</span>
-
-          <span className="text-l">{classification?.drawMatches.length}</span>
-        </div>
+        <ClassificationRow
+          player={T.DRAWS}
+          victories={classification.drawMatches.length}
+        />
       </div>
     </div>
   );
