@@ -27,6 +27,12 @@
     line-height: 20px;
 }
 
+.text-xs {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+
 .board-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);    

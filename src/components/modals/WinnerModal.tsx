@@ -59,7 +59,7 @@ export const WinnerModal: React.FC<Props> = ({
           <Button
             className="text-white bg-primary border-0"
             onClick={() => {
-              router.push("/board");
+              router.push("/clasification");
             }}
           >
             {T.SEE_CLASIFICATION}
