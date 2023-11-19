@@ -8,7 +8,7 @@ export default class DatabaseProvider {
     await mongoose
       .connect(MONGODB_URI)
       .then(() => {
-        console.log("Connected to MongoDB");
+        console.log("Database connected");
       })
       .catch((err) => {
         console.log(err);

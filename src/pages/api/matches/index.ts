@@ -43,6 +43,27 @@ const createMatch = async (
   res.status(200).json(match);
 };
 
+const updateMatch = async (
+  turn: TURNS,
+  board: TURNS[],
+  match: Match,
+  res: NextApiResponse
+) => {
+  if (!match) {
+    res.status(404).json({ message: "Match not found" });
+    return;
+  }
+
+  const newMovement = generateNewMovement(turn, board);
+
+  match.board = newMovement.board;
+  match.turn = newMovement.turn;
+
+  await MatchModel.updateOne({ _id: match._id }, match);
+
+  res.status(200).json(match);
+};
+
 const createOrUpdateMatch = async (
   req: NextApiRequest,
   res: NextApiResponse
@@ -58,18 +79,11 @@ const createOrUpdateMatch = async (
   const match = await MatchModel.findById(matchId);
 
   if (!match || !matchId) {
-    createMatch(body.turn, body.board, res);
+    await createMatch(body.turn, body.board, res);
     return;
   }
 
-  const newMovement = generateNewMovement(body.turn, body.board);
-
-  match.board = newMovement.board;
-  match.turn = newMovement.turn;
-
-  await match.save();
-
-  res.status(200).json(match);
+  await updateMatch(body.turn, body.board, match, res);
 };
 
 const createEndpoints = async (req: NextApiRequest, res: NextApiResponse) => {
