@@ -24,12 +24,7 @@ export const WinnerModal: React.FC<Props> = ({
   const router = useRouter();
 
   return (
-    <Modal
-      show={isModalOpen}
-      onHide={() => {
-        setIsModalOpen(false);
-      }}
-    >
+    <Modal show={isModalOpen}>
       <Modal.Header>
         <Modal.Title>{T.MATCH_FINISHED}</Modal.Title>
       </Modal.Header>
@@ -62,7 +57,7 @@ export const WinnerModal: React.FC<Props> = ({
               router.push("/classification");
             }}
           >
-            {T.SEE_classification}
+            {T.SEE_CLASSIFICATION}
           </Button>
         </div>
       </Modal.Body>
