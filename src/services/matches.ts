@@ -39,3 +39,9 @@ export const createOrUpdateMatch = async (
 
   return data;
 };
+
+export const deleteMatch = async (matchId: string): Promise<void> => {
+  await fetch(`/api/matches?matchId=${matchId}`, {
+    method: "DELETE",
+  });
+};
