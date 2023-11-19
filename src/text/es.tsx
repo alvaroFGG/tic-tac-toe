@@ -1,5 +1,6 @@
 const language = {
-  classification: "Clasificación",
+  CLASSIFICATION: "Clasificación",
+  CLICK_TO_START_A_MATCH: "Haz click en un cuadrado para empezar una partida",
   DRAW: "Empate",
   DRAWS: "Empates",
   HOME: "Home",

@@ -73,6 +73,10 @@ export default function HomePage() {
         setTurn={setTurn}
       />
 
+      {!matchId && (
+        <span className="text-xs text-gray600">{T.CLICK_TO_START_A_MATCH}</span>
+      )}
+
       <span className="text-l fw-bold">
         {T.TURN} {turn}
       </span>

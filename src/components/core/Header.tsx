@@ -25,7 +25,7 @@ export const Header = () => {
             router.asPath === "/classification" && "bg-white rounded-2"
           }`}
         >
-          {T.classification}
+          {T.CLASSIFICATION}
         </Link>
       </div>
     </header>
