@@ -7,19 +7,19 @@ import { Button, Modal } from "react-bootstrap";
 interface Props {
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
-  winner: TURNS;
   setBoard: (value: TURNS[]) => void;
   setMatchId: (value: string) => void;
   setTurn: (value: TURNS) => void;
+  winner?: TURNS;
 }
 
 export const WinnerModal: React.FC<Props> = ({
   isModalOpen,
   setIsModalOpen,
-  winner,
   setBoard,
   setMatchId,
   setTurn,
+  winner,
 }) => {
   const router = useRouter();
 
@@ -35,9 +35,13 @@ export const WinnerModal: React.FC<Props> = ({
       </Modal.Header>
 
       <Modal.Body>
-        <p>
-          {T.WINNER} {winner}
-        </p>
+        {winner && (
+          <p>
+            {T.WINNER} {winner}
+          </p>
+        )}
+
+        {!winner && <p>{T.DRAW}</p>}
 
         <div className="d-flex justify-content-end gap-3">
           <Button

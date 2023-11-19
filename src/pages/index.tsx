@@ -76,6 +76,7 @@ export default function HomePage() {
         ))}
       </section>
 
+      {/* La funcionalidad que tiene este botón no la haría en el mismo, sino en un modal que explicase qué pasa si quieres reiniciar la partida */}
       {matchId && (
         <Button
           className="text-white bg-error600 border-0"

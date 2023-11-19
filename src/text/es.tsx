@@ -1,4 +1,5 @@
 const language = {
+  DROW: "Empate",
   HOME: "Home",
   BOARD: "Board",
   MATCH_FINISHED: "La partida ha terminado!! 🎉",
