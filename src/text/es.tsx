@@ -1,5 +1,5 @@
 const language = {
-  CLASIFICATION: "Clasificación",
+  classification: "Clasificación",
   DRAW: "Empate",
   DRAWS: "Empates",
   HOME: "Home",
@@ -8,7 +8,7 @@ const language = {
   PLAY_AGAIN: "Jugar de nuevo",
   PLAYER: "Jugador",
   RESET_GAME: "Reiniciar partida",
-  SEE_CLASIFICATION: "Ver clasificación",
+  SEE_classification: "Ver clasificación",
   TIC_TAC_TOE: "Tic Tac Toe",
   TURN: "Turno:",
   VICTORIES: "Victorias",

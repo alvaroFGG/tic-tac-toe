@@ -1,21 +1,21 @@
 import { T } from "@/text";
-import { getClasification } from "@/services";
-import { Clasification, TURNS } from "@/types";
+import { getclassification } from "@/services";
+import { classification, TURNS } from "@/types";
 import React, { useEffect, useState } from "react";
 
 const BoardPage = () => {
-  const [clasification, setClasification] = useState<Clasification>();
+  const [classification, setclassification] = useState<classification>();
 
-  const fetchClasification = async () => {
-    const response = await getClasification();
+  const fetchclassification = async () => {
+    const response = await getclassification();
 
     if (response) {
-      setClasification(response);
+      setclassification(response);
     }
   };
 
   useEffect(() => {
-    fetchClasification();
+    fetchclassification();
   }, []);
 
   return (
@@ -35,7 +35,7 @@ const BoardPage = () => {
         <div className="d-flex justify-content-between bg-white p-3">
           <span>{TURNS.X}</span>
 
-          <span className="text-l">{clasification?.XMatches.length}</span>
+          <span className="text-l">{classification?.XMatches.length}</span>
         </div>
 
         <div className="d-flex justify-content-between bg-white p-3">
@@ -43,13 +43,13 @@ const BoardPage = () => {
             {TURNS.O} <span className="text-xs">(IA)</span>
           </span>
 
-          <span className="text-l">{clasification?.OMatches.length}</span>
+          <span className="text-l">{classification?.OMatches.length}</span>
         </div>
 
         <div className="d-flex justify-content-between bg-white p-3">
           <span>{T.DRAWS}</span>
 
-          <span className="text-l">{clasification?.drawMatches.length}</span>
+          <span className="text-l">{classification?.drawMatches.length}</span>
         </div>
       </div>
     </div>

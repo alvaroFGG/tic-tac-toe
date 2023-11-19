@@ -1,2 +1,2 @@
 export * from "./matches";
-export * from "./clasification";
+export * from "./classification";

@@ -1,6 +1,6 @@
 import { Match } from "@/backend/models/interfaces/match";
 
-export interface Clasification {
+export interface classification {
   XMatches: Match[];
   OMatches: Match[];
   drawMatches: Match[];
