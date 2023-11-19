@@ -35,6 +35,7 @@ export default function HomePage() {
       setWinner(undefined);
       setShowModal(true);
       return;
+    }
 
     setMatchId(response._id);
     setTurn(TURNS.X);
