@@ -12,6 +12,7 @@ export default function HomePage() {
   const [matchId, setMatchId] = useState<string>("");
   const [winner, setWinner] = useState<TURNS>();
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const setMovementByAI = async (newBoard: TURNS[]) => {
     const response = await createOrUpdateMatch(newBoard, turn, matchId);
@@ -42,7 +43,7 @@ export default function HomePage() {
   };
 
   const updateBoard = async (index: number) => {
-    if (board[index] !== TURNS.EMPTY) {
+    if (board[index] !== TURNS.EMPTY || isLoading) {
       return;
     }
 
@@ -51,7 +52,9 @@ export default function HomePage() {
     setBoard(newBoard);
     setTurn(TURNS.O);
 
+    setIsLoading(true);
     await setMovementByAI(newBoard);
+    setIsLoading(false);
   };
 
   const handleResetGame = async () => {
