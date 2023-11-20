@@ -1,10 +1,10 @@
 import React from "react";
 import { T } from "@/text";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <header className="w-100 d-flex flex-column align-items-center justify-content-center p-3">
@@ -14,7 +14,7 @@ export const Header = () => {
         <Link
           href="/"
           className={`text-decoration-none px-2 py-1 ${
-            router.asPath === "/" && "bg-white rounded-2"
+            pathname === "/" && "bg-white rounded-2"
           }`}
         >
           {T.HOME}
@@ -22,7 +22,7 @@ export const Header = () => {
         <Link
           href="/classification"
           className={`text-decoration-none px-2 py-1 ${
-            router.asPath === "/classification" && "bg-white rounded-2"
+            pathname === "/classification" && "bg-white rounded-2"
           }`}
         >
           {T.CLASSIFICATION}

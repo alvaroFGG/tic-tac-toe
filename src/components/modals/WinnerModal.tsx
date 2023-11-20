@@ -1,7 +1,7 @@
 import React from "react";
 import { T } from "@/text";
 import { TURNS } from "@/types";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { Button, Modal } from "react-bootstrap";
 
 interface Props {
