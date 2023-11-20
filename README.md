@@ -73,3 +73,6 @@ I used Cypress to test the principal functionality of the app, that is playing a
 
 - This test consists of a for loop that does the labor of the player, then it waits for the AI response.
 - If the game stops, the tests checks if the modal is displayed.
+
+To open the cypress window: `npx cypress open`
+To run cypress tests in terminal: `npx cypress run`
