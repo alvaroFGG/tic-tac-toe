@@ -20,13 +20,15 @@ pnpm  dev
 bun  dev
 ```
 
-## Stack
+## Tech Stack
 
 - Nextjs: For the frontend and API
 - Typescript
-- Bootstrap: react-bootstrap and bootstrap
+- Styles
+  - Bootstrap: react-bootstrap and bootstrap
+  - Sass for global vars and classes
 - MongoDB
-- Testing - Jest - React Testing Library
+- Testing - Jest - React Testing Library - Cypress
 
 ## Folder Hierarchy
 
@@ -68,3 +70,6 @@ To check the coverage: `npm run coverage`
 ### End to end tests
 
 I used Cypress to test the principal functionality of the app, that is playing a match against the server side algorithm, this way we can check that the app works correctly pretty fast.
+
+- This test consists of a for loop that does the labor of the player, then it waits for the AI response.
+- If the game stops, the tests checks if the modal is displayed.
