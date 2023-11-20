@@ -3,7 +3,7 @@ import { NextApiResponse } from "next";
 import { MatchModel } from "../models/match";
 import { Match } from "../models/interfaces/match";
 
-const generateNewMovement = (turn: TURNS, board: TURNS[]) => {
+export const generateNewMovement = (turn: TURNS, board: TURNS[]) => {
   const hasAWinner = checkWinner(board);
 
   if (hasAWinner) {
@@ -44,7 +44,7 @@ const generateNewMovement = (turn: TURNS, board: TURNS[]) => {
   };
 };
 
-const checkWinner = (board: TURNS[]) => {
+export const checkWinner = (board: TURNS[]) => {
   const winningCombinations = [
     [0, 1, 2], // Horizontal
     [3, 4, 5], // Horizontal
