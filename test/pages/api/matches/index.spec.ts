@@ -18,7 +18,7 @@ jest.mock("@/backend/modules/matches", () => ({
     ],
     winner: TURNS.O,
   })),
-  __esModule: true, // this property makes it work
+  __esModule: true,
 }));
 
 describe("generateNewMovement and check winner", () => {
@@ -40,10 +40,8 @@ describe("generateNewMovement and check winner", () => {
     ];
     const mockTurn = TURNS.X;
 
-    // Mock checkWinner to return false initially and then true after a move is made
     mockCheckWinner.mockReturnValueOnce(false).mockReturnValueOnce(true);
 
-    // Mock Math.random to control the index that will be chosen
     global.Math.random = jest.fn(() => 0);
 
     const result = generateNewMovement(mockTurn, mockBoard);
