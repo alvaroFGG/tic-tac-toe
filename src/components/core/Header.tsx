@@ -19,6 +19,7 @@ export const Header = () => {
         >
           {T.HOME}
         </Link>
+
         <Link
           href="/classification"
           className={`text-decoration-none px-2 py-1 ${
