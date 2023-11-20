@@ -43,7 +43,7 @@ export default function HomePage() {
   };
 
   const updateBoard = async (index: number) => {
-    if (board[index] !== TURNS.EMPTY || isLoading) {
+    if (board[index] !== TURNS.EMPTY || isLoading || showModal) {
       return;
     }
 
